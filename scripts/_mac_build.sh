@@ -48,6 +48,7 @@ function build_coin_project {
   done
 
   # Create an archive with project universal static libs
+  mkdir -p lib
   tar -czf lib/${project_name}-release.${project_version}-universal-macos.tar.gz -C ${build_dir}/dist/universal .
 
 }
