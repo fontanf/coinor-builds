@@ -4,12 +4,12 @@
 # Build COIN-OR Project from sources for different architectures #
 ##################################################################
 
-function build_coin_project {
+function build_coinor_project {
 
-  # Example variables to defin before calling this function
-  # -------------------------------------------------------
+  # Example variables to define before calling this function
+  # --------------------------------------------------------
   # project_name=Cbc
-  # project_version=[2.10.12]
+  # project_version=2.10.12
   # archs=(arm64 x86_64)
   # libs=(Cbc Cgl Clp ClpSolver CoinUtils Osi OsiCbc OsiClp OsiCommonTests)
 

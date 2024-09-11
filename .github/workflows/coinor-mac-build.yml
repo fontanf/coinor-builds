@@ -1,4 +1,4 @@
-name: Build Coin static libs for MacOS
+name: Build Coin-or static libs for MacOS
 
 on:
   workflow_dispatch:

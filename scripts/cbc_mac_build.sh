@@ -12,4 +12,4 @@ libs=(Cbc Cgl Clp ClpSolver CoinUtils Osi OsiCbc OsiClp OsiCommonTests)
 
 . scripts/_mac_build.sh
 
-build_coin_project
+build_coinor_project
