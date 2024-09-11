@@ -12,4 +12,4 @@ libs=(CoinUtils Osi OsiCommonTests)
 
 . scripts/_mac_build.sh
 
-build_coin_project
+build_coinor_project
