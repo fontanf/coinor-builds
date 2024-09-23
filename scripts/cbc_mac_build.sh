@@ -5,7 +5,7 @@
 ##############################################################
 
 project_name=Cbc
-project_version=2.10.12
+project_versions=(2.10.12)
 
 archs=(arm64 x86_64)
 libs=(Cbc Cgl Clp ClpSolver CoinUtils Osi OsiCbc OsiClp OsiCommonTests)

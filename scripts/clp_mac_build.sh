@@ -5,7 +5,7 @@
 ##############################################################
 
 project_name=Clp
-project_version=1.17.10
+project_versions=(1.17.10)
 
 archs=(arm64 x86_64)
 libs=(Clp ClpSolver CoinUtils Osi OsiClp OsiCommonTests)
