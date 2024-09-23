@@ -5,7 +5,7 @@
 ####################################################################
 
 project_name=CoinUtils
-project_version=2.11.12
+project_versions=(2.10.12)
 
 archs=(arm64 x86_64)
 libs=(CoinUtils)

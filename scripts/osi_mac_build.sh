@@ -5,7 +5,7 @@
 ##############################################################
 
 project_name=Osi
-project_version=0.108.11
+project_versions=(0.108.11)
 
 archs=(arm64 x86_64)
 libs=(CoinUtils Osi OsiCommonTests)
