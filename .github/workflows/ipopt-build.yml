@@ -1,0 +1,38 @@
+name: Build Ipopt static libs for Linux and MacOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, ubuntu-22.04-arm, macos-14, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    steps:
+
+    - name: Install dependencies (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gfortran liblapack-dev libblas-dev wget
+
+    - name: Install dependencies (MacOS)
+      if: runner.os == 'macOS'
+      run: |
+        brew update
+        brew install gcc wget
+        # Homebrew only provides versioned gfortran-<N> binaries.
+        ln -sf $(ls $(brew --prefix)/bin/gfortran-* | sort -V | tail -n 1) $(brew --prefix)/bin/gfortran
+
+    - uses: actions/checkout@v4
+
+    - name: Build Ipopt
+      run: ./scripts/ipopt_build.sh
+      shell: bash
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ipopt-${{ matrix.os }}
+        path: ${{ github.workspace }}/lib
