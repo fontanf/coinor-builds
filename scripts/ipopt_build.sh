@@ -30,14 +30,14 @@ arch=$(uname -m)
 if [ "${os}" = "Darwin" ]; then
   platform=macos-${arch}
   lapack_lflags="-framework Accelerate"
-  fc=${FC:-$(ls /opt/homebrew/bin/gfortran /usr/local/bin/gfortran 2>/dev/null | head -n 1)}
   jobs=$(sysctl -n hw.ncpu)
 else
   platform=linux-${arch}
   lapack_lflags="-llapack -lblas"
-  fc=${FC:-gfortran}
   jobs=$(nproc)
 fi
+
+fc=${FC:-gfortran}
 
 root_dir=$(pwd)
 prefix=${root_dir}/${build_dir}/dist
